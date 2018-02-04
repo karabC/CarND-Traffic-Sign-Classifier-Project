@@ -121,7 +121,7 @@ If an iterative approach was chosen:
   However, after the increase of the depth. The model is highly overfit. I have further applied Max Pooling and Drop out to prevent overfitting
 
 * Which parameters were tuned? How were they adjusted and why?
-  I have tunned the Dropout probablity for finding a suitable probability
+  I have tunned the Dropout probablity for finding a suitable probability. As the model is or
 
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
   ​
@@ -143,31 +143,66 @@ Here are the results of the prediction:
 
 |                  Image                   |  Prediction   |
 | :--------------------------------------: | :-----------: |
-| Vehicles over 3.5 metric tons prohibited |   Stop sign   |
-|                  U-turn                  |    U-turn     |
-|                  Yield                   |     Yield     |
-|                 100 km/h                 |  Bumpy Road   |
-|              Slippery Road               | Slippery Road |
+| Vehicles over 3.5 metric tons prohibited |   Vehicles over 3.5 metric tons prohibited   |
+|                  Speed limit (30km/h)                |    Speed limit (30km/h)     |
+|                  Keep right                   |     Keep right     |
+|                 Turn right ahead             |  Turn right ahead   |
+|              Right-of-way at the next intersection               | Right-of-way at the next intersection |
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 18 - 22 cell of the Ipython notebook.
+For all five images, the prediction are pretty sure of their oringinal classes.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
 | Probability |  Prediction   |
 | :---------: | :-----------: |
-|     .60     |   Stop sign   |
-|     .20     |    U-turn     |
-|     .05     |     Yield     |
-|     .04     |  Bumpy Road   |
-|     .01     | Slippery Road |
+|     1.00000000e+00     |   Stop sign   |
+|     6.69590662e-16     |    End of no passing by vehicles over 3.5 metric ...     |
+|     8.84415614e-21     |     Speed limit (100km/h)     |
+|     1.60674987e-21     |  Speed limit (80km/h)  |
+|     5.76508486e-22     | End of no passing |
+
+For the second image, 
+| Probability |  Prediction   |
+| :---------: | :-----------: |
+| 1.00000000e+00 | Speed limit (30km/h) |
+| 6.66715438e-09 | Ahead only |
+| 1.18389187e-09 | Stop |
+| 9.33583877e-10 | Speed limit (80km/h) |
+| 2.19198146e-10 | Road narrows on the right |
+
+For the third image, 
+| Probability |  Prediction   |
+| :---------: | :-----------: |
+| 1.00000000e+00 | Keep right |
+| 0 | Speed limit (20km/h) |
+| 0 | Speed limit (50km/h) |
+| 0	| Speed limit (60km/h) |
+| 0	| Speed limit (70km/h) |
 
 
-For the second image ... 
+For the forth image, 
+| Probability |  Prediction   |
+| :---------: | :-----------: |
+| 1.00000000e+00 | Turn right ahead |
+| 1.86530682e-13 | Turn left ahead |
+| 4.91353556e-18 | Keep left |
+| 5.96932769e-19 | Ahead only |
+| 2.86005193e-20 | Go straight or left |
+
+
+For the fifth image, 
+| Probability |  Prediction   |
+| :---------: | :-----------: |
+| 1.00000000e+00 | Right-of-way at the next intersection | 
+| 1.12722809e-09 | Pedestrians | 
+| 1.93478955e-10 | Double curve | 
+| 4.47416660e-14 | Beware of ice/snow | 
+| 5.16073458e-15 | Dangerous curve to the right | 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
