@@ -121,9 +121,12 @@ If an iterative approach was chosen:
   However, after the increase of the depth. The model is highly overfit. I have further applied Max Pooling and Drop out to prevent overfitting
 
 * Which parameters were tuned? How were they adjusted and why?
-  I have tunned the Dropout probablity for finding a suitable probability. As the model is or
+
+  I have tunned the Dropout probablity for finding a suitable probability. As the model is trained with decreased training error but increasing validation error, it looks like overfitting occured.
 
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+
+One of the important design is CNN, which allow the image pixels to be consider in group. Another technique is the dropout, which boosts the model's robutness and help in solving overfitting problem
   ​
 
 ###Test a Model on New Images
@@ -135,7 +138,6 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -167,6 +169,7 @@ For all five images, the prediction are pretty sure of their oringinal classes.
 |     5.76508486e-22     | End of no passing |
 
 For the second image, 
+
 | Probability |  Prediction   |
 | :---------: | :-----------: |
 | 1.00000000e+00 | Speed limit (30km/h) |
@@ -176,6 +179,7 @@ For the second image,
 | 2.19198146e-10 | Road narrows on the right |
 
 For the third image, 
+
 | Probability |  Prediction   |
 | :---------: | :-----------: |
 | 1.00000000e+00 | Keep right |
@@ -186,6 +190,7 @@ For the third image,
 
 
 For the forth image, 
+
 | Probability |  Prediction   |
 | :---------: | :-----------: |
 | 1.00000000e+00 | Turn right ahead |
@@ -196,6 +201,7 @@ For the forth image,
 
 
 For the fifth image, 
+
 | Probability |  Prediction   |
 | :---------: | :-----------: |
 | 1.00000000e+00 | Right-of-way at the next intersection | 
@@ -203,8 +209,5 @@ For the fifth image,
 | 1.93478955e-10 | Double curve | 
 | 4.47416660e-14 | Beware of ice/snow | 
 | 5.16073458e-15 | Dangerous curve to the right | 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
